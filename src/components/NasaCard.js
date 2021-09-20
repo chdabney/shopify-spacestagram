@@ -26,7 +26,7 @@ const ExpandMore = styled((props) => {
 
 export default function NasaCard({ ...props }) {
   const [expanded, setExpanded] = React.useState(false);
-  const { title, url, date, explanation } = props;
+  const { title, url, date, explanation, id, isFavorite } = props;
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
