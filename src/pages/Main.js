@@ -1,4 +1,7 @@
+import { Container } from "@mui/material";
+import React from "react";
 import { useAxios } from "../api/api";
+import NasaCard from "../components/NasaCard";
 
 const { REACT_APP_API_KEY } = process.env;
 
@@ -10,7 +13,7 @@ function Main() {
   console.log(result);
 
   return (
-    <div>
+    <Container>
       {isLoading ? (
         <p>loading...</p>
       ) : (
@@ -20,18 +23,16 @@ function Main() {
               <p>{error.message}</p>
             </div>
           )}
-          <div>
-            {result && (
-              <div>
-                {result.map((item) => (
-                  <h1>{item.title}</h1>
-                ))}
-              </div>
-            )}
-          </div>
+          {result && (
+            <div>
+              {result.map((item) => (
+                <NasaCard key={item.title} {...item} />
+              ))}
+            </div>
+          )}
         </div>
       )}
-    </div>
+    </Container>
   );
 }
 
