@@ -1,4 +1,6 @@
 import * as React from "react";
+import { Likes } from "./Likes";
+
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
@@ -8,8 +10,6 @@ import CardActions from "@mui/material/CardActions";
 import Collapse from "@mui/material/Collapse";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
@@ -37,9 +37,7 @@ export default function NasaCard({ ...props }) {
       <CardHeader title={title} subheader={date} />
       <CardMedia component="img" height="300" image={url} alt={title} />
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
+        <Likes {...props} />
         <IconButton aria-label="share">
           <ShareIcon />
         </IconButton>
