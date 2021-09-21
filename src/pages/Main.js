@@ -1,10 +1,11 @@
-import { Container } from "@mui/material";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { useAxios } from "../api/api";
 import { actionCreators } from "../redux/actions";
 import NasaCard from "../components/NasaCard";
+import Loading from "../components/Loading";
+import ScrollToTop from "../components/ScrollToTop";
 
 const { REACT_APP_API_KEY } = process.env;
 
@@ -14,7 +15,6 @@ function Main() {
   const [result, error, isLoading] = useAxios(API_BASE_URL);
 
   const cardData = useSelector((state) => state.favorite.cardData);
-  console.log(cardData);
 
   const dispatch = useDispatch();
 
@@ -25,9 +25,9 @@ function Main() {
   }, [result]);
 
   return (
-    <Container>
+    <div>
       {isLoading ? (
-        <p>loading...</p>
+        <Loading />
       ) : (
         <div>
           {error && (
@@ -44,7 +44,8 @@ function Main() {
           )}
         </div>
       )}
-    </Container>
+      <ScrollToTop showBelow={250} />
+    </div>
   );
 }
 

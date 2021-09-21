@@ -2,7 +2,6 @@ import {
   SET_IS_FAVORITE,
   SET_CARD_DATA,
   ADD_TO_FAVORITES,
-  GET_FAVORITES,
 } from "../actions/actions";
 import { v4 as uuidv4 } from "uuid";
 

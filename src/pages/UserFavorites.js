@@ -2,8 +2,9 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import NasaCard from "../components/NasaCard";
+import ScrollToTop from "../components/ScrollToTop";
 
-export default function UserFavorites() {
+function UserFavorites() {
   const favorites = useSelector((state) => state.favorite.favorites);
 
   return (
@@ -15,6 +16,9 @@ export default function UserFavorites() {
           ))}
         </div>
       )}
+      <ScrollToTop showBelow={250} />
     </div>
   );
 }
+
+export default UserFavorites;
