@@ -10,8 +10,10 @@ import CardActions from "@mui/material/CardActions";
 import Collapse from "@mui/material/Collapse";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import ShareIcon from "@mui/icons-material/Share";
+
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
+import { TransitionsModal } from "./Modal";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -39,7 +41,7 @@ export default function NasaCard({ ...props }) {
       <CardActions disableSpacing>
         <Likes {...props} />
         <IconButton aria-label="share">
-          <ShareIcon />
+          <TransitionsModal url={url} />
         </IconButton>
         <ExpandMore
           expand={expanded}
