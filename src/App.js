@@ -8,7 +8,7 @@ import { Box } from "@mui/system";
 function App() {
   return (
     <>
-      <NavBar />
+
       <Box
         display="flex"
         justifyContent="center"
